@@ -17,9 +17,25 @@ public class Skill {
     @ManyToOne
     private Employee employee;
 
+    public Skill() {
+    }
+
+    
     public Skill(String skillName) {
 		this.skillName = skillName;
 	}
+    
+    public Skill(String skillName,String description) {
+        this.skillName = skillName;
+        this.description = description;
+    }
+
+
+    public Skill(String skillName,String description, Employee employee) {
+        this.skillName = skillName;
+        this.description = description;
+        this.employee = employee;
+    }
 
 	public Integer getSkillId() {
         return skillId;
@@ -55,12 +71,5 @@ public class Skill {
         this.employee = employee;
     }
 
-    public Skill() {
-    }
 
-    public Skill(String skillName,String description, Employee employee) {
-        this.skillName = skillName;
-        this.description = description;
-        this.employee = employee;
-    }
 }
